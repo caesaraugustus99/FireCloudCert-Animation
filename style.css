@@ -2,17 +2,23 @@ body {
     background-color: darkblue;
 }
 
+svg {
+    margin: 32px;
+    padding: 32px;
+}
+
+/* Unused graphics */
 .cloud-outline, .green-dot {
-    opacity: 0;
+    visibility: hidden;
 }
 
 /* Cloud-dot Animation */
 .cloud-dot {
     transform-box: fill-box;
-    animation: cloud-dot 2s ease-out forwards;
+    animation: dotMoveUp 2s ease-out forwards;
 }
 
-@keyframes cloud-dot {
+@keyframes dotMoveUp {
     0%   {opacity: 0;}
     15%  {opacity: 0;}
     83%  {opacity: 1; transform: translateY(-123px);}
@@ -25,11 +31,11 @@ body {
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center;
-    animation: cloud .5s ease-out forwards;
+    animation: cloudExpand .5s ease-out forwards;
     animation-delay: 2s;
 }
 
-@keyframes cloud {
+@keyframes cloudExpand {
     0% {opacity: 1; transform: scale(0);}
     20% {opacity: 1; transform: scale(.5);}
     40% {opacity: 1; transform: scale(1);}
@@ -37,31 +43,89 @@ body {
     100% {opacity: 1; transform: scale(1);}
 }
 
+/* Fire-dot Animation */
+.fire-dot {
+    opacity: 0;
+    transform-box: fill-box;
+    animation: dotMoveUp2 2s ease-out forwards;
+    animation-delay: 2.5s;
+}
+    
+@keyframes dotMoveUp2 {
+    0%   {opacity: 0;}
+    15%  {opacity: 0;}
+    83%  {opacity: 1; transform: translateY(-123px);}
+    93%  {opacity: 1; transform: translateY(-123px) scale(1.8); transform-origin: center;}
+    100% {opacity: 1; transform: translateY(-123px) scale(0); transform-origin: center;}
+}
+
 /* Fire Animation */
+.fire {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: fireOpacity .5s ease-out forwards;
+    animation-delay: 4.5s;
+}
+
 .back {
     transition: all 1 ease; 
     transform-origin: center;
     transform-box: fill-box;
-    animation: fire 1s linear infinite alternate;
-    animation-delay: 1s;
+    animation: fireFlicker 1s linear 6 alternate;
+    animation-delay: 5.5s;
 }
 
 .middle {
     transition: all 1 ease; 
     transform-origin: center;
     transform-box: fill-box;
-    animation: fire 1s linear infinite alternate;
-    animation-delay: .5s;
+    animation: fireFlicker 1s linear 6 alternate;
+    animation-delay: 5s;
 }
 
 .front {
     transition: all 1 ease; 
     transform-origin: center;
     transform-box: fill-box;
-    animation: fire 1s linear infinite alternate;
+    animation: fireFlicker 1s linear 6 alternate;
+    animation-delay: 4.5s;
 }
 
-@keyframes fire {
+@keyframes fireOpacity {
+    0% {opacity: 1; transform: scale(0);}
+    20% {opacity: 1; transform: scale(.5);}
+    100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes fireFlicker {
     0%   {opacity: 1; transform: scale(1);}
     100% {opacity: .8; transform: scale(.9);}
+}
+
+/* Logo Animation */
+
+.logo {
+  clip-path: inset(0 0 0 100%);
+  animation: revealRightToLeft .5s ease-out forwards;
+  animation-delay: 12s;
+}
+
+@keyframes revealRightToLeft {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.logo-fire {
+    animation: logoMoveRight .5s ease-in-out forwards;
+    animation-delay: 11.5s;
+}
+
+@keyframes logoMoveRight {
+    0%   {opacity: 1;}
+    100% {opacity: 1; transform: translateX(162px);}
 }

@@ -3,10 +3,10 @@ body {
 }
 
 /* Fire Animation */
-
 .back {
     transition: all 1 ease; 
     transform-origin: center;
+    transform-box: fill-box;
     animation: fire 1s linear infinite alternate;
     animation-delay: 1s;
 }
@@ -14,6 +14,7 @@ body {
 .middle {
     transition: all 1 ease; 
     transform-origin: center;
+    transform-box: fill-box;
     animation: fire 1s linear infinite alternate;
     animation-delay: .5s;
 }
@@ -21,38 +22,11 @@ body {
 .front {
     transition: all 1 ease; 
     transform-origin: center;
+    transform-box: fill-box;
     animation: fire 1s linear infinite alternate;
 }
 
 @keyframes fire {
-    0%   {opacity: 1; transform: scale(1)}
-    100% {opacity: .8; transform: scale(.9)}
-}
-
-/* Green Dot Animation */
-
-.container {
-    display: grid;
-    justify-items: start;
-    align-items: start;
-}
-
-.container > * {
-    grid-column-start: 1;
-    grid-row-start: 1;
-}
-
-.green-dot {
-    animation: green-dot 2s linear 1;
-    /* Move 45 px to the right for animation */
-}
-
-.user {
-    opacity: 50%;
-}
-
-@keyframes green-dot {
-    0% {opacity: 0;}
-    50% {opacity: .5; transform: translate(72px, 17px)}
-    100% {opacity: 1;}
+    0%   {opacity: 1; transform: scale(1);}
+    100% {opacity: .8; transform: scale(.9);}
 }

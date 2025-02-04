@@ -1,0 +1,109 @@
+body {
+    background-color: #0E2241;
+}
+
+svg {
+    margin: 32px;
+    padding: 32px;
+}
+
+/* Length 10.5 seconds */
+
+/* Animation starts */
+
+/* Cloud-dot Animation */
+.cloud-dot path {
+    transform-box: fill-box;
+    animation: dotMoveRight 1s ease-out forwards;
+}
+
+@keyframes dotMoveRight {
+    0%   {opacity: 0; fill: #60A5FA;}
+    15%  {opacity: 0; fill: #60A5FA;}
+    45%  {opacity: 0.5; fill: #60A5FA;}
+    83%  {opacity: 1; fill: #FFFFFF; transform: translateX(134px);}
+    93%  {fill: #FFFFFF; transform: translateX(134px) scale(1.8); transform-origin: center;}
+    100% {fill: #FFFFFF; transform: translateX(134px) scale(0); transform-origin: center;}
+}
+
+/* Cloud Animation */
+.cloud {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cloudExpand .5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes cloudExpand {
+    0% {opacity: 1; transform: scale(0);}
+    20% {opacity: 1; transform: scale(.5);}
+    40% {opacity: 1; transform: scale(1);}
+    50% {opacity: 1; transform: scale(1.3);}
+    100% {opacity: 1; transform: scale(1);}
+}
+
+/* Fire-dot Animation */
+.fire-dot path {
+    opacity: 0;
+    transform-box: fill-box;
+    animation: dotMoveRight2 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+    
+@keyframes dotMoveRight2 {
+    0%   {opacity: 0; fill: #FFFFFF;}
+    15%  {opacity: 0; fill: #FFFFFF;}
+    45%  {opacity: 0.5; fill: #FFFFFF;}
+    83%  {opacity: 1; fill: #FF9D00; transform: translateX(134px);}
+    93%  {opacity: 1; fill: #FF9D00; transform: translateX(134px) scale(1.8); transform-origin: center;}
+    100% {opacity: 1; fill: #FF9D00; transform: translateX(134px) scale(0); transform-origin: center;}
+}
+
+/* Fire Animation */
+.fire {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: fireOpacity .5s ease-out forwards;
+    animation-delay: 2.5s;
+}
+
+.back {
+    transition: all 1 ease; 
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: fireFlicker 1s linear 6 alternate;
+    animation-delay: 3.5s;
+}
+
+.middle {
+    transition: all 1 ease; 
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: fireFlicker 1s linear 6 alternate;
+    animation-delay: 3s;
+}
+
+.front {
+    transition: all 1 ease; 
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: fireFlicker 1s linear 6 alternate;
+    animation-delay: 2.5s;
+}
+
+@keyframes fireOpacity {
+    0% {opacity: 1; transform: scale(0);}
+    20% {opacity: 1; transform: scale(.5);}
+    100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes fireFlicker {
+    0%   {opacity: 1; transform: scale(1);}
+    100% {opacity: .8; transform: scale(.9);}
+}
+
+/* Length: 10.5 seconds */
+
+/* Animation ends */

@@ -1,5 +1,5 @@
 body {
-    background-color: darkblue;
+    background-color: #0E2241;
 }
 
 svg {
@@ -7,23 +7,23 @@ svg {
     padding: 32px;
 }
 
-/* Unused graphics */
-.cloud-outline, .green-dot {
-    visibility: hidden;
-}
+/* Length 14.8 seconds */
+
+/* Animation starts */
 
 /* Cloud-dot Animation */
-.cloud-dot {
+.cloud-dot path {
     transform-box: fill-box;
-    animation: dotMoveUp 2s ease-out forwards;
+    animation: dotMoveUp 1s ease-out forwards;
 }
 
 @keyframes dotMoveUp {
-    0%   {opacity: 0;}
-    15%  {opacity: 0;}
-    83%  {opacity: 1; transform: translateY(-123px);}
-    93%  {transform: translateY(-123px) scale(1.8); transform-origin: center;}
-    100% {transform: translateY(-123px) scale(0); transform-origin: center;}
+    0%   {opacity: 0; fill: #60A5FA;}
+    15%  {opacity: 0; fill: #60A5FA;}
+    45%  {opacity: 0.5; fill: #60A5FA;}
+    83%  {opacity: 1; fill: #FFFFFF; transform: translateY(-123px);}
+    93%  {fill: #FFFFFF; transform: translateY(-123px) scale(1.8); transform-origin: center;}
+    100% {fill: #FFFFFF; transform: translateY(-123px) scale(0); transform-origin: center;}
 }
 
 /* Cloud Animation */
@@ -32,7 +32,7 @@ svg {
     transform-box: fill-box;
     transform-origin: center;
     animation: cloudExpand .5s ease-out forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 @keyframes cloudExpand {
@@ -44,19 +44,20 @@ svg {
 }
 
 /* Fire-dot Animation */
-.fire-dot {
+.fire-dot path {
     opacity: 0;
     transform-box: fill-box;
-    animation: dotMoveUp2 2s ease-out forwards;
-    animation-delay: 2.5s;
+    animation: dotMoveUp2 1s ease-out forwards;
+    animation-delay: 1.5s;
 }
     
 @keyframes dotMoveUp2 {
-    0%   {opacity: 0;}
-    15%  {opacity: 0;}
-    83%  {opacity: 1; transform: translateY(-123px);}
-    93%  {opacity: 1; transform: translateY(-123px) scale(1.8); transform-origin: center;}
-    100% {opacity: 1; transform: translateY(-123px) scale(0); transform-origin: center;}
+    0%   {opacity: 0; fill: #FFFFFF;}
+    15%  {opacity: 0; fill: #FFFFFF;}
+    45%  {opacity: 0.5; fill: #FFFFFF;}
+    83%  {opacity: 1; fill: #FF9D00; transform: translateY(-123px);}
+    93%  {opacity: 1; fill: #FF9D00; transform: translateY(-123px) scale(1.8); transform-origin: center;}
+    100% {opacity: 1; fill: #FF9D00; transform: translateY(-123px) scale(0); transform-origin: center;}
 }
 
 /* Fire Animation */
@@ -65,7 +66,7 @@ svg {
     transform-box: fill-box;
     transform-origin: center;
     animation: fireOpacity .5s ease-out forwards;
-    animation-delay: 4.5s;
+    animation-delay: 2.5s;
 }
 
 .back {
@@ -73,7 +74,7 @@ svg {
     transform-origin: center;
     transform-box: fill-box;
     animation: fireFlicker 1s linear 6 alternate;
-    animation-delay: 5.5s;
+    animation-delay: 3.5s;
 }
 
 .middle {
@@ -81,7 +82,7 @@ svg {
     transform-origin: center;
     transform-box: fill-box;
     animation: fireFlicker 1s linear 6 alternate;
-    animation-delay: 5s;
+    animation-delay: 3s;
 }
 
 .front {
@@ -89,7 +90,7 @@ svg {
     transform-origin: center;
     transform-box: fill-box;
     animation: fireFlicker 1s linear 6 alternate;
-    animation-delay: 4.5s;
+    animation-delay: 2.5s;
 }
 
 @keyframes fireOpacity {
@@ -106,26 +107,150 @@ svg {
 /* Logo Animation */
 
 .logo {
-  clip-path: inset(0 0 0 100%);
-  animation: revealRightToLeft .5s ease-out forwards;
-  animation-delay: 12s;
+    clip-path: inset(0 0 0 100%);
+    animation: revealRightToLeft .5s ease-out forwards;
+    animation-delay: 10s;
 }
 
 @keyframes revealRightToLeft {
-  0% {
+    0% {
     clip-path: inset(0 0 0 100%);
-  }
+    }
   100% {
     clip-path: inset(0 0 0 0);
-  }
+    }
 }
 
 .logo-fire {
     animation: logoMoveRight .5s ease-in-out forwards;
-    animation-delay: 11.5s;
+    animation-delay: 9.5s;
 }
 
 @keyframes logoMoveRight {
     0%   {opacity: 1;}
-    100% {opacity: 1; transform: translateX(162px);}
+    100% {opacity: 1; transform: translateX(101px);}
 }
+
+.grad-cap {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+    animation: capReveal .3s ease-out forwards;
+    animation-delay: 10s;
+}
+
+@keyframes capReveal {
+    0% {opacity: 1;
+        clip-path: inset(100% 0 0 0);
+      }
+    100% {opacity: 1;
+        clip-path: inset(0 0 0 0);
+      }
+}
+
+/* Length: 10.5 seconds, reduced from 12.5 seconds */
+
+/* Animation fades out */
+
+/* Logo Fadeout */
+
+.fadeout-logo {
+    animation: hideLeftToRight .3s ease-out forwards;
+    animation-delay: 12s;
+}
+  
+@keyframes hideLeftToRight {
+    0% {
+    clip-path: inset(0 0 0 0);
+    }
+    100% {
+      clip-path: inset(0 0 0 100%);
+    }
+}
+  
+.fadeout-logo-fire {
+    animation: logoMoveLeft .3s ease-in-out forwards;
+    animation-delay: 12s;
+}
+  
+@keyframes logoMoveLeft {
+    0%   {opacity: 1;}
+    100% {opacity: 1; transform: translateX(-101px);}
+}
+  
+.fadeout-grad-cap {
+    animation: capHide .3s ease-out forwards;
+    animation-delay: 12s;
+}
+  
+@keyframes capHide {
+    0% {opacity: 1;
+          clip-path: inset(0 0 0 0);
+    }
+    100% {opacity: 1;
+          clip-path: inset(100% 0 0 0);
+    }
+}
+
+/* Fire Fadeout */
+.fadeout-fire {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: fireShrink .5s ease-out forwards;
+    animation-delay: 12.3s;
+}
+
+@keyframes fireShrink {
+    0% {opacity: 1; transform: scale(1);}
+    20% {opacity: 1; transform: scale(.5);}
+    100% {opacity: 0; transform: scale(0);}
+}
+
+.fadeout-dot path {
+    opacity: 0;
+    transform-box: fill-box;
+    animation: dotMoveDown 1s ease-out forwards;
+    animation-delay: 12.7s;
+}
+    
+@keyframes dotMoveDown {
+    0%   {opacity: .5; fill: #FF9D00;}
+    15%  {opacity: 1; fill: #FF9D00;}
+    30%  {opacity: 1; fill: #FF9D00;}
+    45%  {opacity: .5; fill: #FF9D00;}
+    95%  {opacity: 0; fill: #FFFFFF; transform: translateY(123px);}
+    100% {opacity: 0; fill: #FFFFFF; transform: translateY(123px) scale(0);}
+}
+
+/* Cloud Fadeout */
+
+.fadeout-cloud path {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cloudShrink .3s ease-out forwards;
+    animation-delay: 13.6s;
+}
+
+@keyframes cloudShrink {
+    0% {opacity: 1; transform: scale(1);}
+    100% {opacity: 1; transform: scale(0);}
+}
+
+.fadeout-dot2 path {
+    opacity: 0;
+    transform-box: fill-box;
+    animation: dotMoveDown2 1s ease-out forwards;
+    animation-delay: 13.8s;
+}
+
+@keyframes dotMoveDown2 {
+    0%   {opacity: .5; fill: #FFFFFF;}
+    15%  {opacity: 1; fill: #FFFFFF;}
+    30%  {opacity: 1; fill: #60A5FA;}
+    45%  {opacity: .5; fill: #60A5FA;}
+    95%  {opacity: 0; fill: #60A5FA; transform: translateY(123px);}
+    100% {opacity: 0; fill: #60A5FA; transform: translateY(123px) scale(0);}
+}
+
+/* Animation ends */
+
+/* Length 14.8 seconds */
